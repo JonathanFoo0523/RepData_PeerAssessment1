@@ -59,7 +59,7 @@ ggplot(Data) + geom_histogram(aes(x=date, weight=steps), bins=length(unique(Data
     labs(x="Date", y="No of Steps", title = "Histogram of The Total Number of Steps Taken Each Day")
 ```
 
-![](PA1_template_files/figure-html/Histogram for total steps per day-1.png)<!-- -->
+![](PA1_template_files/figure-html/Histogram_for_total_steps_per_day-1.png)<!-- -->
 
 Finally, the mean and median of total number of steps taken per day is calculated using functions as shown below: 
 
@@ -86,7 +86,7 @@ plot(names(byInterval), byInterval, type='l', xlab="5-minute interval", ylab = "
 title(main="Average Daily Activity Pattern")
 ```
 
-![](PA1_template_files/figure-html/Average Daily Activity Pattern-1.png)<!-- -->
+![](PA1_template_files/figure-html/Average_Daily_Activity_Pattern-1.png)<!-- -->
 
 From plot, it can be seen that the interval at around 850 contains the maximum number of stages. We confirm this by running the code 
 
@@ -152,7 +152,7 @@ ggplot(newData) + geom_histogram(aes(x=date, weight=steps), bins=length(unique(n
     labs(x="Date", y="No of Steps", title = "Histogram of The Total Number of Steps Taken Each Day(Completed)")
 ```
 
-![](PA1_template_files/figure-html/Histogram for total steps per day with new dataset-1.png)<!-- -->
+![](PA1_template_files/figure-html/Histogram_for_total_steps_per_day_with_new_dataset-1.png)<!-- -->
 
 Finally, the new mean and median of total number of steps taken per day is calculated using functions as shown below: 
 
@@ -218,4 +218,4 @@ ggplot(summary) + geom_line(aes(interval,avg)) + facet_grid(day~.) + labs(x="Int
     labs(y="Number of steps")
 ```
 
-![](PA1_template_files/figure-html/panel plot-1.png)<!-- -->
+![](PA1_template_files/figure-html/panel_plot-1.png)<!-- -->

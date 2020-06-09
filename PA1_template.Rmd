@@ -31,7 +31,7 @@ print(byDay)
 
 The histogram of the total number of steps taken each day using is plotted using `ggplot`. Note the correpondence between value calculated above and the histogram plotted below.
 
-```{r Histogram for total steps per day}
+```{r Histogram_for_total_steps_per_day}
 library(ggplot2)
 ggplot(Data) + geom_histogram(aes(x=date, weight=steps), bins=length(unique(Data$date))) + 
     labs(x="Date", y="No of Steps", title = "Histogram of The Total Number of Steps Taken Each Day")
@@ -53,7 +53,7 @@ To calculate the average number of steps taken across all day for every 5 minute
 
 The result is then plotted as a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
-```{r Average Daily Activity Pattern}
+```{r Average_Daily_Activity_Pattern}
 byInterval <- tapply(Data$steps, Data$interval, mean, na.rm=TRUE)
 
 plot(names(byInterval), byInterval, type='l', xlab="5-minute interval", ylab = "Average Steps Taken across All Days")
@@ -113,7 +113,7 @@ newData <- cbind(steps, Data[,2:3])
 ```
 
 ### Redrawn the histogram of the total number of steps taken each day with new dataset
-```{r Histogram for total steps per day with new dataset}
+```{r Histogram_for_total_steps_per_day_with_new_dataset}
 library(ggplot2)
 ggplot(newData) + geom_histogram(aes(x=date, weight=steps), bins=length(unique(newData$date))) + 
     labs(x="Date", y="No of Steps", title = "Histogram of The Total Number of Steps Taken Each Day(Completed)")
@@ -145,7 +145,7 @@ newData$day <- as.factor(newData$day)
 ```
 
 A panel plot containing a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis) is then created.
-```{r panel plot}
+```{r panel_plot}
 library(dplyr)
 library(ggplot2)
 summary <- newData %>% group_by(day, interval) %>% summarize(avg=mean(steps))
